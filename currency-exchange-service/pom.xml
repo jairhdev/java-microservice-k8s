@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.jairhdev</groupId>
 	<artifactId>currency-exchange-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>currency-exchange-service</name>
 	<description>Microservice, Spring Boot, Kubernetes</description>
 	<properties>
@@ -65,17 +65,20 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<image>
-						<name>jairhdev/java-microservice-${project.artifactId}:${project.version}</name>
-					</image>
-					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
-				</configuration>				
-			</plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.1.4</version>
+                <configuration>
+                    <from>
+                        <image>ibm-semeru-runtimes:open-17.0.1_12-jre-centos7</image>
+                    </from>
+                    <to>
+                        <image>jairhdev/java-microservice-${project.artifactId}:${project.version}</image>
+                    </to>
+                </configuration>
+            </plugin>
 		</plugins>
-	</build>
+	</build>	
 
 </project>

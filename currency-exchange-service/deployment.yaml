@@ -23,7 +23,7 @@ spec:
         app: currency-exchange
     spec:
       containers:
-      - image: jairhdev/java-microservice-currency-exchange-service:0.0.1-SNAPSHOT
+      - image: jairhdev/java-microservice-currency-exchange-service:0.0.2-SNAPSHOT
         imagePullPolicy: IfNotPresent
         name: java-microservice-currency-exchange-service
         readinessProbe:
